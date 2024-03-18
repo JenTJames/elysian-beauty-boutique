@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elysian</title>
+    <link rel="icon" type="image/png" href="./assets/brand.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+    <link rel="stylesheet" href="node_modules/tailwindcss/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f5f6fd",
+                100: "#e6e6fa",
+                200: "#dbdbf9",
+                300: "#c0bff3",
+                400: "#9f9aeb",
+                500: "#7e71e1",
+                600: "#6952d5",
+                700: "#5940c1",
+                800: "#4a35a2",
+                900: "#3f2d85",
+                950: "#251b5a",
+              },
+            },
+          },
+          fontFamily: {
+            sans: ["fredoka", "sans-serif"],
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div
+      class="max-w-full lg:min-h-dvh bg-slate-50 p-2 md:p-7 flex flex-col gap-7"
+    >
+      <section class="w-full grid lg:grid-cols-2 gap-3">
+        <div class="flex flex-col gap-3 justify-center items-center p-3 md:p-7">
+          <h1 class="text-4xl lg:text-6xl">
+            Dare to <span class="text-primary-500">Dream.</span> Dare to
+            <span class="text-primary-500">Dazzle.</span>
+            Let Us Illuminate Your
+            <span class="text-primary-500"> Beauty Story.</span>
+          </h1>
+          <p class="text-slate-500 text text-pretty text-base md:text-lg">
+            Step into a world where beauty knows no bounds. At Elysian, we
+            believe that every individual has a unique story waiting to be
+            unveiled.
+          </p>
+          <div class="flex gap-3 w-full">
+            <button
+              class="w-full bg-primary-500 rounded-md text-primary-100 font-semibold p-2 md:p-3 hover:bg-primary-600 active:bg-primary-700"
+            >
+              Book Now
+            </button>
+            <button
+              class="w-full bg-transparent border border-primary-500 rounded-md text-primary-500 font-semibold px-2 md:px-5 hover:border-primary-600 hover:text-primary-600 active:border-primary-700 active:text-primary-700"
+            >
+              Free Consultation
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col lg:justify-center lg:items-center gap-3 p-7">
+          <div class="flex gap-3">
+            <img
+              class="rounded-md object-cover w-2/3 h-full"
+              src="https://images.unsplash.com/photo-1559599076-9c61d8e1b77c?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="salon-1"
+            />
+            <img
+              class="rounded-md object-cover w-2/3"
+              src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="salon-2"
+            />
+          </div>
+          <img
+            class="rounded-md object-cover object-top w-full"
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="salon-3"
+          />
+        </div>
+      </section>
+      <section
+        class="flex flex-col lg:justify-center lg:items-center p-1 gap-3"
+      >
+        <h3 class="text-primary-500 text-xl lg:text-3xl">
+          Our range of services
+        </h3>
+        <div class="grid grid-col-1 md:grid-col-3 gap-7 w-full">
+          <!-- Men's grooming -->
+          <div class="flex flex-col items-center gap-3 w-full">
+            <img
+              class="rounded-md md:rounded-full h-60 w-full md:h-32 md:w-32 lg:w-52 lg:h-52 object-cover"
+              src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyYmVyfGVufDB8fDB8fHww"
+              alt="men's haircut"
+            />
+            <div class="flex flex-col md:items-center gap-2">
+              <h1 class="text-xl text-slate-900">Men's Grooming</h1>
+              <p class="text-slate-500 text-justify lg:text-lg">
+                Elevate Your Look with Our Expert Men's Haircuts. Our Talented
+                Stylists are Dedicated to Crafting the Perfect Cut to Suit Your
+                Individuality and Lifestyle.
+              </p>
+            </div>
+          </div>
+          <!-- Women's grooming -->
+          <div class="flex flex-col items-center gap-3 w-full">
+            <img
+              class="rounded-md md:rounded-full h-60 w-full md:h-32 md:w-32 lg:w-52 lg:h-52 object-cover"
+              src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFpciUyMHN0eWxpc3R8ZW58MHx8MHx8fDA%3D"
+              alt="men's haircut"
+            />
+            <div class="flex flex-col md:items-center gap-2">
+              <h1 class="text-xl text-slate-900">Women's Grooming</h1>
+              <p class="text-slate-500 text-justify lg:text-lg">
+                From Timeless Classics to Trendsetting Styles, Our Skilled
+                Stylists are Here to Transform Your Look into a Reflection of
+                Elegance and Confidence.
+              </p>
+            </div>
+          </div>
+          <!-- Bridal Makeup -->
+          <div class="flex flex-col items-center gap-3 w-full">
+            <img
+              class="rounded-md md:rounded-full h-60 w-full md:h-32 md:w-32 lg:w-52 lg:h-52 object-cover"
+              src="https://images.unsplash.com/photo-1574871786514-46e1680ea587?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJyaWRlfGVufDB8fDB8fHww"
+              alt="men's haircut"
+            />
+            <div class="flex flex-col md:items-center gap-2">
+              <h1 class="text-xl text-slate-900">Bridal Makeup</h1>
+              <p class="text-slate-500 text-justify lg:text-lg">
+                Our Expert Makeup Artists are Committed to Enhancing Your
+                Natural Glow and Creating a Flawless Look for Your Special Day.
+                Let Us Be Part of Your Love Story and Illuminate Your Bridal
+                Beauty with Every Brushstroke.
+              </p>
+            </div>
+          </div>
+          <!-- Spa Packages -->
+          <div class="flex flex-col items-center gap-3 w-full">
+            <img
+              class="rounded-md md:rounded-full h-60 w-full md:h-32 md:w-32 lg:w-52 lg:h-52 object-cover"
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFNwYXxlbnwwfHwwfHx8MA%3D%3D"
+              alt="men's haircut"
+            />
+            <div class="flex flex-col md:items-center gap-2">
+              <h1 class="text-xl text-slate-900">Spa Packages</h1>
+              <p class="text-slate-500 text-justify lg:text-lg">
+                From Relaxing Massages to Rejuvenating Treatments, Our Skilled
+                Therapists are Dedicated to Restoring Your Body, Mind, and
+                Spirit.
+              </p>
+            </div>
+          </div>
+          <!-- Manicure & Pedicure -->
+          <div class="flex flex-col items-center gap-3 full">
+            <img
+              class="rounded-md md:rounded-full h-60 w-full md:h-32 md:w-32 lg:w-52 lg:h-52 object-cover"
+              src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVkaWN1cmV8ZW58MHx8MHx8fDA%3D"
+              alt="men's haircut"
+            />
+            <div class="flex flex-col md:items-center gap-2">
+              <h1 class="text-xl text-slate-900">Manicure & Pedicure</h1>
+              <p class="text-slate-500 text-justify lg:text-lg">
+                From Classic Elegance to Trendy Designs, Our Skilled Technicians
+                are Here to Pamper You with Precision and Care. Step into Our
+                Oasis of Relaxation and Let Your Nails Shine with Beauty and
+                Brilliance
+              </p>
+            </div>
+          </div>
+          <!-- Hair & Facial Treatments -->
+          <div class="flex flex-col items-center gap-3 w-full">
+            <img
+              class="rounded-md md:rounded-full h-60 w-full md:h-32 md:w-32 lg:w-52 lg:h-52 object-cover"
+              src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29zbWV0aWNzfGVufDB8fDB8fHww"
+              alt="men's haircut"
+            />
+            <div class="flex flex-col md:items-center gap-2">
+              <h1 class="text-xl text-slate-900">Hair & Facial Treatments</h1>
+              <p class="text-slate-500 text-justify lg:text-lg">
+                From Revitalizing Hair Treatments to Nourishing Facial
+                Therapies, Our Expert Technicians are Dedicated to Unveiling
+                Your Natural Radiance. Step into Tranquility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="flex flex-col gap-5 justify-center items-center bg-primary-200 rounded-md p-10"
+      >
+        <h1 class="text-primary-900 text-5xl">
+          All of these at affordable pricing
+        </h1>
+        <p class="text-primary-800 md:w-3/4 text-xl">
+          We believe that everyone deserves to indulge in premium beauty and
+          grooming services without breaking the bank. Our commitment to
+          affordability ensures that you can experience the highest quality
+          hair, nail, and skincare treatments at prices that won't stretch your
+          budget. Discover exceptional value without sacrificing excellence.
+          Step into our salon and experience the epitome of luxury at prices
+          you'll love.
+        </p>
+        <div class="flex flex-wrap gap-5 justify-center items-center w-full">
+          <!-- Essential Package -->
+          <div
+            class="flex flex-col w-full md:w-1/4 gap-3 border border-white bg-white rounded-md p-5"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg">Essential Package</h3>
+              <h1 class="font-semibold text-3xl text-primary-500">₹299</h1>
+            </div>
+            <hr />
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-900">
+                check_circle
+              </span>
+              <p>Haircut (For Men or Women)</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-900">
+                check_circle
+              </span>
+              <p>Basic Pedicure</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-900">
+                check_circle
+              </span>
+              <p>Basic Manicure</p>
+            </div>
+          </div>
+          <!-- Ultimate Spa Experience -->
+          <div
+            class="flex flex-col w-full md:w-1/4 gap-3 border border-primary-800 bg-primary-800 rounded-md p-5"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+                <h3 class="text-lg text-primary-50">Ultimate Spa Experience</h3>
+                <div class="flex flex-col md:flex-row md:items-center gap-1">
+                  <span class="material-symbols-rounded text-orange-300">
+                    stars
+                  </span>
+                  <p class="text-orange-300 text-sm">Recommended value pack</p>
+                </div>
+              </div>
+              <h1 class="font-semibold text-3xl text-primary-50">₹1999</h1>
+            </div>
+            <hr />
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-50">
+                check_circle
+              </span>
+              <p class="text-primary-50">
+                Haircut, Style and Color (For Men or Women)
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-50">
+                check_circle
+              </span>
+              <p class="text-primary-50">Signature Facial Treatment</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-50">
+                check_circle
+              </span>
+              <p class="text-primary-50">Full Body Massage</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-50">
+                check_circle
+              </span>
+              <p class="text-primary-50">
+                Premium Pedicure with Paraffin Treatment
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-50">
+                check_circle
+              </span>
+              <p class="text-primary-50">Eybrow Shaping and Tinting</p>
+            </div>
+          </div>
+          <!-- Glamour Package -->
+          <div
+            class="flex flex-col w-full md:w-1/4 gap-3 border border-white bg-white rounded-md p-5"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg">Glamour Package</h3>
+              <h1 class="font-semibold text-3xl text-primary-500">₹799</h1>
+            </div>
+            <hr />
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-900">
+                check_circle
+              </span>
+              <p>Haircut & Style (For Men or Women)</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-900">
+                check_circle
+              </span>
+              <p>Deluxe Manicure with Gel Polish</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-rounded text-primary-900">
+                check_circle
+              </span>
+              <p>Deluxe Pedicure with Foot Massage</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="flex flex-col justify-center items-center gap-3">
+        <h3 class="text-primary-500 text-3xl">Reviews</h3>
+        <h3 class="text-slate-900 text-4xl lg:text-6xl">
+          Our customers love us!
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div
+            class="border bg-white flex flex-col justify-between gap-3 p-5 w-full rounded-md shadow-md"
+          >
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+            </div>
+            <p class="text-slate-500 text-lg">
+              I can't recommend Elysian enough! The staff is incredibly talented
+              and friendly. I always leave feeling like a million bucks after
+              getting my hair done here. The atmosphere is so welcoming, and the
+              prices are unbeatable. Definitely my go-to salon for all my beauty
+              needs!
+            </p>
+            <div class="flex items-center gap-5">
+              <img
+                class="w-16 h-16 rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1520423465871-0866049020b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VGVlbnxlbnwwfHwwfHx8MA%3D%3D"
+                alt="teen"
+              />
+              <div class="flex flex-col">
+                <h1 class="text-primary-950">Clara Bertoletti</h1>
+                <p class="text-slate-500">Regular Customer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border bg-white flex flex-col justify-between gap-3 p-5 w-full rounded-md shadow-md"
+          >
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+            </div>
+            <p class="text-slate-500 text-lg">
+              I had the most amazing experience at Elysian. The manicure and
+              pedicure I received were top-notch, and the attention to detail
+              was impeccable. The technician was so attentive and made sure I
+              was comfortable throughout the entire process. Plus, the prices
+              are so affordable for the level of service you receive. I'll
+              definitely be back!
+            </p>
+            <div class="flex items-center gap-5">
+              <img
+                class="w-16 h-16 rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VGVlbnxlbnwwfHwwfHx8MA%3D%3D"
+                alt="teen"
+              />
+              <div class="flex flex-col">
+                <h1 class="text-primary-950">Gloria Maria</h1>
+                <p class="text-slate-500">Regular Customer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border bg-white flex flex-col justify-between gap-3 p-5 w-full rounded-md shadow-md"
+          >
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+            </div>
+            <p class="text-slate-500 text-lg">
+              I had my bridal makeup done at Elysian, and it was an absolute
+              dream come true! The makeup artist understood my vision perfectly
+              and created a look that was flawless and long-lasting. My
+              bridesmaids also got their hair and makeup done here, and we all
+              looked stunning. Thank you for making my special day even more
+              magical!
+            </p>
+            <div class="flex items-center gap-5">
+              <img
+                class="w-16 h-16 rounded-full object-cover object-top"
+                src="https://images.unsplash.com/photo-1592973286472-8f8263a3683c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fFRlZW58ZW58MHx8MHx8fDA%3D"
+                alt="teen"
+              />
+              <div class="flex flex-col">
+                <h1 class="text-primary-950">Chary Smith</h1>
+                <p class="text-slate-500">Had Bridal Makeup</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border bg-white flex flex-col justify-between gap-3 p-5 w-full rounded-md shadow-md"
+          >
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+              <span class="material-symbols-rounded text-orange-500">
+                grade
+              </span>
+            </div>
+            <p class="text-slate-500 text-lg">
+              If you're looking for a salon that offers high-quality treatments
+              at reasonable prices, look no further than Elysian. I recently got
+              a haircut and facial here, and I was blown away by the results.
+              The stylist listened to exactly what I wanted and delivered beyond
+              my expectations. The facial left my skin feeling refreshed and
+              rejuvenated. I'm already planning my next visit!
+            </p>
+            <div class="flex items-center gap-5">
+              <img
+                class="w-16 h-16 rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1509988892867-8bf3ee9e3afa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFRlZW58ZW58MHx8MHx8fDA%3D"
+                alt="teen"
+              />
+              <div class="flex flex-col">
+                <h1 class="text-primary-950">John Anderson</h1>
+                <p class="text-slate-500">Regular Customer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex-1 flex flex-col gap-3 p-2">
+          <div class="flex flex-col">
+            <h3 class="text-primary-500 text-3xl">Contact Us</h3>
+            <h3 class="text-slate-900 text-4xl md:text-6xl">Get in touch</h3>
+            <p class="text-slate-500 text-lg">
+              We'd love to talk about how we can help you
+            </p>
+          </div>
+          <div class="h-[400px] rounded-md" id="map"></div>
+          <div class="flex justify-around">
+            <div class="flex flex-col gap-3">
+              <div class="flex flex-col">
+                <h3 class="text-primary-950 underline">Call us:</h3>
+                <p class="text-primary-900">+31 34 111 222</p>
+              </div>
+              <div class="flex flex-col">
+                <h3 class="text-primary-950 underline">Address:</h3>
+                <p class="text-primary-900">
+                  Elysian Beauty Boutique, Bangalore
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-primary-950 underline">Email Us:</h3>
+              <p class="text-primary-900">hi@elysian.com</p>
+              <p class="text-primary-900">booking@elysian.com</p>
+              <p class="text-primary-900">hr@elysian.com</p>
+              <p class="text-primary-900">complaints@elysian.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1">
+          <form class="flex flex-col gap-3 border rounded-md shadow-md p-5">
+            <div class="flex items-center gap-3">
+              <input
+                class="w-full rounded-md border p-3 bg-transparent focus:outline-primary-500"
+                type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="Firstname"
+              />
+              <input
+                class="w-full rounded-md border p-3 bg-transparent focus:outline-primary-500"
+                type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="Lastname"
+              />
+            </div>
+            <input
+              class="w-full rounded-md border p-3 bg-transparent focus:outline-primary-500"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+            <textarea
+              class="w-full rounded-md border p-3 bg-transparent focus:outline-primary-500"
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+            <p class="text-center text-slate-500">
+              We will get back to you in 2-3 business days
+            </p>
+            <button
+              class="w-full bg-primary-500 rounded-md text-primary-100 font-semibold p-3 hover:bg-primary-600 active:bg-primary-700"
+            >
+              Connect
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <hr />
+    <footer
+      class="flex flex-col gap-3 justify-center items-center p-8 md:p-10 lg:p-16 bg-primary-100"
+    >
+      <div class="flex items-center gap-2">
+        <img class="w-8" src="./assets/brand.svg" alt="brand" />
+        <h1 class="text-primary-400 text-4xl">Elysian</h1>
+      </div>
+      <h1 class="text-slate-500">Crafted with ♥️ by Broscode.dev</h1>
+      <h1 class="text-slate-500">
+        &#169; Elysian Beauty Boutique. 2024, Bangalore. All Rights reserved
+      </h1>
+      <p class="text-sm text-slate-500">
+        When you visit or interact with our sites, services or tools, we or our
+        authorised service providers may use cookies for storing information to
+        help provide you with a better, faster and safer experience and for
+        marketing purposes.
+      </p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
